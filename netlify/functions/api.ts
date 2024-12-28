@@ -5,8 +5,9 @@ import { GameStateManager } from '../../src/game/managers/GameStateManager';
 import { PatternController } from '../../src/game/controllers/PatternController';
 import { ButtonController } from '../../src/game/controllers/ButtonController';
 import { RewardSystem } from '../../src/game/utils/rewardSystem';
+import path from 'path';
 
-config(); // Load environment variables
+config({ path: path.resolve(__dirname, '../../.env') }); // Load environment variables
 
 const botToken = process.env.TELEGRAM_BOT_TOKEN;
 
