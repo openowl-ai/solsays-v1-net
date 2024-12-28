@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  base: '/', // Add this line to set the base path to the root
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
@@ -11,7 +12,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'http://localhost:3000', // Proxy to your local server during development
         changeOrigin: true,
         secure: false,
       },
